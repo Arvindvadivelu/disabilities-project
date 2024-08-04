@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #111317;
+  --primary-color-light: #1f2125;
+  --primary-color-extra-light: #35373b;
+  --secondary-color: #f9ac54;
+  --secondary-color-dark: #d79447;
+  --text-light: #d1d5db;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--primary-color);
+  }
+
+  .explore__grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .explore__card {
+    background-color: var(--primary-color-light);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; 
+  }
+  
+  .explore__card:hover {
+    background-color: var(--primary-color-extra-light);
+    border-color: var(--secondary-color);
+  }
+
+  .explore__card--large {
+    padding: 10em;
+    padding-left: 75em;
+    margin-left: 4.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 500px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  /* Styling for the voice output box */
+/* Styling for the voice output box */
+.voice-output {
+    background-color: #000000;
+    color: #f9ac54;
+    padding: 15px;
+    width:fit-content;
+    height: auto;
+    min-height: 50px;
+    overflow-wrap: break-word;
+    margin-left: 70px;
+    margin-top: 25px;
+    font-size: larger;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    border-radius: 10px;
+    bottom: 20px;
+  
+  }
+  
+  .typing-animation {
+    border-right: 2px solid #f9ac54;
+    display: inline-block;
+    animation: typing 0.5s steps(20, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(0, 0, 0) }
+  }
+  
+  /* Additional CSS for video positioning and z-index */
+  #webcam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Ensure the video is in front of other content */
+    object-fit: cover; /* Ensure the video covers the container without distortion */
+}
